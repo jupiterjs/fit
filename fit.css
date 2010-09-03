@@ -1,0 +1,192 @@
+/*colors 
+	Dark - #002f2f
+	Light - #EFECCA
+	Dark Blue - #046380
+	Brown - #A7A37E
+	Light brown -#E6E2AF
+*/
+body {
+padding: 0px; margin: 0px; font-family: "Trebuchet MS",Verdana,Helvetica,Arial,sans-serif;
+overflow: hidden;
+
+}
+
+#container {
+	
+}
+
+#files_container {
+	float: left; 
+	width:250px; 
+	background-color: white;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+h3 {margin: 0px; 
+	padding: 2px 0px 0px 0px; 
+	background-color: rgb(195,217,255); 
+	text-align: center;
+	padding: 1px;
+	font-size: 0.9em;
+	font-weight: normal;
+	height: 21px;
+}
+
+
+#entries {margin: 0px;
+	overflow: auto; height: 100%;
+	background-color: white;
+	padding: 0px 0px 0px 2px;
+	font: 8pt verdana;
+	position: relative;
+    /*-moz-user-select: none; here to prevent double clicking */
+}
+.file, .directory, .edit, .upload {background-repeat: no-repeat; padding: 2px 0px 2px 20px; cursor: pointer; position:relative;}
+.file {background-image: url('images/file.png'); background-position: left center; }
+.directory {background-image: url('images/folder.png'); }
+.rename {background-image: url('images/edit.png')}
+
+.container {margin-left: 20px;}
+#MAIN_CONTAINER {display:block;}
+
+.file form, .directory form {padding: 0px; margin: 0px;}
+
+.hover{color: red;}
+
+.delete, .new_file, .upload{background-repeat: no-repeat;}
+.delete {background-image: url(images/delete.png);}
+.new_file {background-image: url(images/new.png);}
+.upload {background-image: url(images/upload.png);}
+
+#contextmenu {
+    border: solid 1px #3167C5;
+    background-color:  White;
+    padding: 2px;
+	line-height: 16pt;
+	list-style: none;
+	margin: 0px;
+	z-Index: 100;
+}
+#contextmenu li.inactive {
+    display: none
+}
+
+#contextmenu a{display: block;
+	color: Black;
+	text-decoration: none;
+	padding-left: 23px;
+		background-repeat: no-repeat;
+	background-position: 1px;
+	float: none;
+	height: auto;
+	width: auto;
+}
+.entry_contextmenu_controller a:hover {
+    background-color: rgb(232,238,247);
+}
+#contextmenu a#myupload:hover {
+    background-color: white;
+}
+#entries .highlight {
+    background-color: rgb(232,238,247);
+}
+
+.context_background{
+	border: solid 1px Gray;
+    padding: 2px;
+	background-color: Gray;
+	z-Index: 99
+}
+input {font-size: 9pt;}
+
+.over {
+   background-color: #E8EEF7
+}
+#entries .selected {
+  background-color: rgb(49,103,197);
+  color: white;
+}
+#entries .canmove {
+  color: red;
+}
+
+#Upload { 
+	position: absolute;
+    width:250px;  height: 246px;
+	left: 0px; bottom: 0px;
+    background-color: White;
+	padding: 0px;
+}
+#Upload h3 {font-size: 12pt}
+#Upload ul {margin: 0px; padding: 0px; list-style: none}
+
+#upload_form  {margin: 0px;}
+#upload_form input {font-size: 10pt;}
+#upload_form_folder_name {color: Gray}
+
+#multiple {background-color: rgb(195,217,255);margin: 0px 3px 3px 3px; }
+
+#multiple h3 {font-size: 12pt;font-weight: bold; 
+	background-color: rgb(232,238,247);
+	overflow: hidden;height:  18px;
+}
+#multiple form {background-color: white;
+	margin: 0px;
+	padding: 0px;
+	height: 209px;
+	overflow: auto;
+}
+#multiple ul { margin: 0px 20px 0px 20px; padding: 0px; list-style: none;}
+
+#multiple p {margin-top: 0px; padding-top: 10px;}
+
+#multipleupload {border: none; width: 250px; height: 250px; }
+td.second { padding-left:20px;}
+
+table {vertical-align: top;}
+
+.input-delete {
+	background:transparent url(images/delete.png) no-repeat scroll 0pt;
+	border:medium none;
+	float:right;
+	height:18px;
+	text-decoration:none;
+	width:18px;
+}
+.queue-size {color: gray; font-size: 10pt; padding-left: 10px;}
+
+#photoupload-queue li {font-size: 9pt;
+	background-image: url('images/file.png'); 
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding: 3px 0px 3px 21px; 
+}
+
+#cancel_upload {
+	display: block; 
+	background-color: rgb(232,238,247);
+	position: absolute; 
+	color: red;
+	text-decoration: none;
+	width: 250px;
+	text-align: center;
+	bottom: 0px;left:0px;
+	font-size: 9pt;
+    height: 21px;
+}
+
+
+#cancel_upload:hover, #signout:hover { text-decoration: underline;}
+#signout {
+	position: absolute; bottom: 1px;right:3px;
+	color: red;
+	text-decoration: none;
+	font-size: 9pt;
+}
+.selectable {
+	outline: none;
+}
+#entries .creating {
+    background-color: #ffffe0;
+}

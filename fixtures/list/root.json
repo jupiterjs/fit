@@ -1,0 +1,14 @@
+{"files":
+	["drwx---r-x    4 stealjs  inetuser     4096 Sep  1 11:29 .",
+	 "drwx---r-x    4 stealjs  inetuser     4096 Sep  1 11:29 ..",
+	 "drwx---r-x    2 stealjs  inetuser     4096 Aug 25 11:32 cgi",
+	 "-rwx---r-x    1 stealjs  inetuser        0 Aug 25 11:32 favicon.ico",
+	 "-rwx---r-x    1 stealjs  inetuser      774 Aug 25 11:32 gdform.php",
+	 "-rw-r--r--    1 stealjs  inetuser        0 Aug 27 09:21 google1f20d60b96ab0d1c.html",
+	 "-rw----r--    1 stealjs  inetuser      358 Sep  1 11:29 index.html",
+	 "-rwx---r-x    1 stealjs  inetuser     1683 Aug 25 11:32 missing.html",
+	 "-rwx---r-x    1 stealjs  inetuser     1100 Aug 25 11:32 php.ini",
+	 "drwx---r-x    2 0        0            4096 Aug 25 11:32 stats",
+	 "lrwxrwxrwx    1 stealjs  inetuser       32 Aug 25 11:32 webformmailer.php -> /web/cgi-admin/webformmailer.php",
+	 "-rwx---r-x    1 stealjs  inetuser     2839 Aug 25 11:32 welcome.html"]
+ }

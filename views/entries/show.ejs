@@ -1,0 +1,15 @@
+<%for(var f=0; f< this.length; f++){%>
+	<%if(this[f].name == '.' || this[f].name == '..') {continue}%>
+	<div 
+		id='<%=this[f].queueID || ""%>'
+        class='<%=this[f].type%> <%=this[f].identity()%> entry selectable'
+		tabindex='0'
+		>
+		<%=this[f].name%>
+        <%if(this[f].uploading){%> <span class='percent'>0%</span> <%}%>
+	</div>
+	<%if(this[f].type == 'directory'){%>
+		<div class='container' style='display:none;'></div>
+	<%}%>
+	
+<%}%>

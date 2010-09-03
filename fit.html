@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>F->IT - Online FTP Client</title>
+
+<!--[if IE 6]>
+<style>
+.file {background-image: url('/images/file_ie.png');}
+.directory {background-image: url('/images/folder_ie.png')}
+.rename {background-image: url('/images/edit_ie.png')}
+.delete {background-image: url(/images/delete_ie.png);}
+.new_file {background-image: url(/images/new_ie.png);}
+.upload {background-image: url(/images/upload_ie.png);}
+
+#entries {width: 240px };
+
+</style>
+<![endif]-->
+
+<!--[if IE 7]>
+<style>
+.container {margin-left: 20px;position:relative;min-height:0;}
+</style>
+<![endif]-->
+</head>
+<body scroll="no">
+	<a href='/' id='signout'>Log out</a>
+	<div id='CONTENT'>
+		<div id='files_container'>
+			<h3 id="files_header">Files</h3>
+		    <div id='entries'>
+		    	<div class='entry_%2F directory selectable entry' tabindex='0'>
+					testing
+				</div>
+				<div class='container'>Loading ...</div>
+		    </div>
+		</div>
+		<div id='container'>
+			<textarea id='EDITAREA_TEXTAREA'>Loading EditArea ...</textarea>
+		</div>
+	</div>
+	<div id='Loading' style='display:none'>Loading</div>
+	<div id='Saving' style='display:none'>Saving</div>
+	<iframe id="upload_frame" name="upload_frame" style="display:none"></iframe>
+<script type='text/javascript' src='../steal/steal.js?fit'>  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<%for(var f=0; f< files.length; f++){%>
+	<%if(files[f].name == '.' || files[f].name == '..') {continue}%>
+	<div 
+		class='<%=files[f].type%>' 
+		type='<%=files[f].type%>' 
+		id='<%=directory+files[f].name%>'>
+		<%=files[f].name%>
+	</div>
+	<%if(files[f].type == 'directory'){%>
+		<div class='container' style='display:none;'></div>
+	<%}%>
+	
+<%}%>
