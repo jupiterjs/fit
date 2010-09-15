@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>contextmenu</title>
+        <style type='text/css'>
+            body {font-family: verdana}
+            .error {border: solid 1px red;}
+            .error_text { color: red; font-size: 10px;}
+            td {padding: 3px;}
+        </style>
+	</head>
+	<body>
+	    <div id='entries'>Multiple Entries</div>
+		<div id='folder'>A Folder</div>
+		<div id='files'>2 Files</div>
+		<script type='text/javascript' 
+                src='../../steal/steal.js?fit/contextmenu'>   
+        </script>
+		<script type='text/javascript'>
+			var entries = Fit.Entry.wrapMany(
+				[
+				{
+					path : "a.txt",
+					type : "file"
+				},
+				{
+					path : "b.txt",
+					type : "file"
+				},
+				{
+					path : "a.txt",
+					type : "directory"
+				}
+				])
+			
+			$("#entries").click(function(ev){
+				
+				Fit.Contextmenu.menu.triggerHandler('show', [ev, new EntriesList( entries ) ])
+				
+			})
+			$("#folder").click(function(ev){
+				
+				Fit.Contextmenu.menu.triggerHandler('show', [ev, new EntriesList( entries.slice(2) ) ])
+				
+			})
+			$("#files").click(function(ev){
+				
+				Fit.Contextmenu.menu.triggerHandler('show', [ev, new EntriesList( entries.slice(0,1) ) ])
+				
+			})
+		</script>
+	</body>
+</html>

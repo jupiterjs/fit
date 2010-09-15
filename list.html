@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title>list</title>
+        <style type='text/css'>
+            body {font-family: verdana}
+            .error {border: solid 1px red;}
+            .error_text { color: red; font-size: 10px;}
+            td {padding: 3px;}
+        </style>
+	</head>
+	<body>
+	    <div id='list'></div>
+		<script type='text/javascript' 
+                src='../steal/steal.js'>   
+        </script>
+		<script type='text/javascript'>
+			steal
+			//.plugins('jquery/dom/fixture').then('//fit/fixtures/findAll')
+			.plugins('fit/list').then(function(){
+				Fit.Entry.connect({
+					url : "stealjs.com",
+					username: "stealjs",
+					password: "Jupiter2IT06"
+				}, function(){
+					$("#list").fit_list({model: Fit.Entry,select: true}).trigger('show')
+				})
+				
+				
+			}).start();
+		</script>
+	</body>
+</html>

@@ -2,10 +2,12 @@
  * @tag home
  * Creates a context menu
  */
+// this should be positionable, be handed a list
 Fit.Controllers.Position.extend("Fit.Controllers.Contextmenu",{
     setup : function( ){
         this._super.apply(this,arguments)
-		this.backgroundDiv = $("<div></div>").css({position: "absolute", display: "none"}).addClass("context_background")
+		this.backgroundDiv = $("<div></div>").css({position: "absolute", display: "none"})
+			.addClass("context_background")
 		$(document.body).append(this.backgroundDiv)
     },
     mouseleave : function(){

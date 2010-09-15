@@ -237,13 +237,13 @@ EditAreaLoader.prototype ={
 		}
 	//	alert(settings["plugins"].length+": "+ settings["plugins"].join(","));
 		t.get_template();
-		steal(t.baseURL+"langs/"+ settings["language"]);
+		steal("langs/"+ settings["language"]);
 		//t.load_script(t.baseURL + "langs/"+ s["language"] + ".js");
 		
 		if(s["syntax"].length>0){
 			s["syntax"]=s["syntax"].toLowerCase();
 			//t.load_script(t.baseURL + "reg_syntax/"+ s["syntax"] + ".js");
-			steal(t.baseURL+"reg_syntax/"+ settings["syntax"]);
+			steal("reg_syntax/"+ settings["syntax"]);
 		}
 		//alert(this.template);
 		

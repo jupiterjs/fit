@@ -1,0 +1,38 @@
+.fit_contextmenu ul li.inactive {
+    display: none
+}
+
+.fit_contextmenu ul {
+    border: solid 1px #3167C5;
+    background-color:  White;
+    padding: 2px;
+	line-height: 16pt;
+	list-style: none;
+	margin: 0px;
+	z-Index: 100;
+}
+.fit_contextmenu ul a{display: block;
+	color: Black;
+	text-decoration: none;
+	padding-left: 23px;
+		background-repeat: no-repeat;
+	background-position: 1px;
+	float: none;
+	height: auto;
+	width: auto;
+}
+
+.delete, .new_file, .upload{background-repeat: no-repeat;}
+.delete {background-image: url(../images/delete.png);}
+.new_file {background-image: url(../images/new.png);}
+.upload {background-image: url(../images/upload.png);}
+
+
+.selected {
+   background-color: #E8EEF7;
+   color: black;
+}
+.fit_contextmenu .activated a {
+  background-color: rgb(49,103,197);
+  color: white;
+}

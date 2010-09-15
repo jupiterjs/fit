@@ -1,3 +1,3 @@
 steal
-  .plugins("funcunit/qunit", "fit")
-  .then("fit_test");
+  .plugins("funcunit/qunit")
+  .then("//fit/models/entry","fit_test");

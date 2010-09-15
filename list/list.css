@@ -1,0 +1,19 @@
+.file, .directory, .edit, .upload {
+		background-repeat: no-repeat; 
+		padding: 2px 0px 2px 20px; 
+		cursor: pointer; 
+		position:relative;
+}
+.file {background-image: url('images/file.png'); background-position: left center; }
+.directory {background-image: url('images/folder.png'); }
+.container {margin-left: 20px;}
+
+
+.selected {
+   background-color: #E8EEF7;
+   color: black;
+}
+.activated {
+  background-color: rgb(49,103,197);
+  color: white;
+}

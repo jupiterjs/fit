@@ -1,3 +1,6 @@
+steal.plugins('jquery/lang/json',
+			'jquery/model',
+			'jquery/lang/rsplit').then(function(){
 /**
  * @tag home, model
  * Enables FTP manipulations through JSON-RPC style requests.  The server takes an array of commands
@@ -22,7 +25,7 @@ Each command has 3 parts:
 </ul>
 This allows multiple requests to be issued at one time.
  */
-$.Model.extend('Entry',
+$.Model.extend('Fit.Entry',
 /* @static */
 {
 	/**
@@ -33,6 +36,9 @@ $.Model.extend('Entry',
 	 */
 	findAll: function(params, success, error){
 		this.run(this.dirCMDS(params.path), this.callback(['foundAll', success], params.path), error)
+	},
+	connect : function(data,callback){
+		$.post("/ftp/connect", data, callback)
 	},
     dirCMDS : function(path){
         return [
@@ -123,6 +129,12 @@ $.Model.extend('Entry',
                    params: [path]
                   }], success, error)
     },
+	destroy : function(params, success, error){
+		this.run([{
+            method: params.type == "directory" ? "rmdir"  :"delete",
+            params: [params.path]
+        }], success, error)
+	},
     /**
      * Renames or moves a folder or file to another location.  This will also get the moved folder's 
      * files.
@@ -323,6 +335,20 @@ $.ModelList.extend("EntriesList",
 			return true;
 		}
 		return false;
+	},
+	moveTo : function(folder, success, error){
+		this.run( 
+			this.map(function(){
+				return {
+	                method: "rename",
+	                params: [this.path, folder]
+	            }
+			}).concat(Fit.Entry.dirCMDS(folder)),
+		 	success, 
+			error);
+
 	}
     
 })
+
+});

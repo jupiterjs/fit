@@ -1,7 +1,7 @@
 /**
  * @tag home
  * Creates a hierarchial list of entries
- * 
+ * We could make this a file list controller, able to add sub children ...
  */
 $.Controller.extend("Fit.Controllers.Entries",{onDocument: true},{
     /**
@@ -21,7 +21,7 @@ $.Controller.extend("Fit.Controllers.Entries",{onDocument: true},{
 
         $(this.view('contextmenu',{})).attr('id','contextmenu').fit_entry_contextmenu({top: 15, left: 15}, true)
         
-        var e = new Entry({path: "/", type: "directory"})
+        var e = new Fit.Entry({path: "/", type: "directory"})
         var el = this.getEl(e);
         e.name = el.html();
         e.open(this.callback('show',  el));
@@ -120,7 +120,7 @@ $.Controller.extend("Fit.Controllers.Entries",{onDocument: true},{
      * @param {Object} data
      */
     "editarea.save subscribe" : function(called, data){
-        var entry = Entry.store.findOne(data.path);
+        var entry = Fit.Entry.store.findOne(data.path);
         var els = this.getEl(entry).html("saving ...")
         entry.text(data.text, this.callback("saved", els, data.edit_area_id) );
         
@@ -139,7 +139,7 @@ $.Controller.extend("Fit.Controllers.Entries",{onDocument: true},{
      * @param {Object} ev
      */
     ".entry contextmenu" : function(el, ev){
-        $("#entries").selectable_controller()[0].select(el, true)
+        $("#entries").fit_selectable("select",el, true);
         var cmenu = $("#contextmenu").controller();
         var list = new EntriesList( el.models() );
         this.contextUpload(list);
@@ -154,7 +154,7 @@ $.Controller.extend("Fit.Controllers.Entries",{onDocument: true},{
      * @param {Object} drag
      */
     ".entry draginit" : function(el, ev, drag){
-        $("#entries").selectable_controller()[0].select(el, true);
+        $("#entries").fit_selectable("select",el, true);
         el.css("opacity",0.2)
         drag.scrolls($('#entries'));
         //drag.ghost(true);
@@ -266,13 +266,13 @@ $.Controller.extend("Fit.Controllers.Entries",{onDocument: true},{
             path = folder.pathSlash()+name,
             type = entEl.hasClass('directory') ? 'directory' : 'file';
         
-        Entry["create"+$.String.capitalize(type)](path, 
+        Fit.Entry["create"+$.String.capitalize(type)](path, 
                          this.callback("created", entEl, {name: name, path: path, type: type}, folder))
         
     },
     created : function(el, d, folder){
         el.remove();
-        var e = new Entry(d);
+        var e = new Fit.Entry(d);
         this.show(this.getEl(folder), [e], {new_file: e} , true)
     },
     /*contextNewFolder : function(el, ev, list){
@@ -350,7 +350,7 @@ $.Controller.extend("Fit.Controllers.Entries",{onDocument: true},{
         
     },
     contextUploadSelect : function(event, queueID, fileObj, list){
-        var entry = new Entry({name: fileObj.name,
+        var entry = new Fit.Entry({name: fileObj.name,
                               path: this.uploading.path+"/"+fileObj.name,
                               uploading: true,
                               queueID: queueID,
